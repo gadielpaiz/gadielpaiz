@@ -39,12 +39,11 @@ kept under version control without Setward installed.
 - **Errors are not masked.** Removing a package that isn't in a profile is an
   error, not a silent no-op. Creating a profile that already exists fails
   atomically at the filesystem level, with no window between the existence
-  check and the write. Before v0.2.0 ships, I'm changing the capture command
-  so that a partial Homebrew failure aborts the capture instead of silently
+  check and the write. A partial Homebrew failure aborts the capture instead of silently
   overwriting a good profile with incomplete data.
 - **Tests from the first milestone.** Unit, integration, and end-to-end tests
   (Swift Testing) are written alongside each milestone, not at the end. The
-  suite currently has over 200 tests.
+  suite has 255 tests across unit, integration, and end-to-end levels.
 - **Decisions are written down.** Every scope change and design decision is
   recorded in a decision log, with the alternatives considered and why they
   were rejected.
@@ -104,9 +103,8 @@ $ setward remove demo jq
 
 - **v0.1.0** — released, with a prebuilt Apple Silicon binary. Commands:
   `init`, `doctor`, `dump`, `list`, `show`, `install`.
-- **v0.2.0** — in development. Profile management (`create`, `add`, `remove`,
-  `edit`) is implemented and tested on the main branch; one cleanup milestone
-  remains before release.
+- **v0.2.0** — released. Profile management (`create`, `add`, `remove`,
+  `edit`), and confirmation before any command destroys data.
 - **Planned** — profile diff and sync, package search, Brewfile
   import/export, macOS 11 support, and later a SwiftUI app built on the same
   core.
@@ -120,4 +118,4 @@ Swift Testing.
 ### Source code
 
 The repository is private. I can grant read access on request during a
-hiring process: [gadiel.paiz@gmail.com]
+hiring process: <gadiel.paiz@gmail.com>
